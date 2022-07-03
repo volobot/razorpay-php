@@ -140,6 +140,7 @@ class Entity extends Resource implements ArrayableInterface
     protected static function getDefinedEntitiesArray()
     {
         return array(
+            'account',
             'collection',
             'payment',
             'refund',

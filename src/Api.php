@@ -3,6 +3,7 @@
 namespace Razorpay\Api;
 
 /**
+ * @property Account $account
  * @property Addon $addon
  * @property Card $card
  * @property Collection $collection
