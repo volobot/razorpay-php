@@ -8,15 +8,15 @@ class Entity extends Resource implements ArrayableInterface
 {
     protected $attributes = array();
  /**
-     * Create method 
+     * Create method
      *
-     * @param array $attributes 
-     * 
+     * @param array $attributes
+     *
      */
-    protected function create($attributes = null) 
+    protected function create($attributes = null)
     {
         $entityUrl = $this->getEntityUrl();
-        
+
         return $this->request('POST', $entityUrl, $attributes);
     }
 
@@ -27,7 +27,7 @@ class Entity extends Resource implements ArrayableInterface
         $this->validateIdPresence($id);
 
         $relativeUrl = $entityUrl . $id;
-       
+
         return $this->request('GET', $relativeUrl);
     }
 
@@ -51,7 +51,7 @@ class Entity extends Resource implements ArrayableInterface
     protected function all($options = array())
     {
         $entityUrl = $this->getEntityUrl();
-        
+
         return $this->request('GET', $entityUrl, $options);
     }
 
@@ -102,7 +102,7 @@ class Entity extends Resource implements ArrayableInterface
             return static::buildEntity($response);
         }
     }
-    
+
     /**
      * Given the JSON response of an API call, wraps it to corresponding entity
      * class or a collection and returns the same.
@@ -166,9 +166,9 @@ class Entity extends Resource implements ArrayableInterface
     public function fill($data)
     {
         $attributes = array();
-        
+
      if(is_array($data))
-     {   
+     {
         foreach ($data as $key => $value)
         {
             if (is_array($value))

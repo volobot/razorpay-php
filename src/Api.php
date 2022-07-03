@@ -2,6 +2,30 @@
 
 namespace Razorpay\Api;
 
+/**
+ * @property Addon $addon
+ * @property Card $card
+ * @property Collection $collection
+ * @property Customer $customer
+ * @property FundAccount $fundAccount
+ * @property Invoice $invoice
+ * @property Item $item
+ * @property Order $order
+ * @property Payment $payment
+ * @property PaymentLink $paymentLink
+ * @property PaymentPage $paymentPage
+ * @property Plan $plan
+ * @property QrCode $qrCode
+ * @property Refund $refund
+ * @property Request $request
+ * @property Resource $resource
+ * @property Settlement $settlement
+ * @property Subscription $subscription
+ * @property Token $token
+ * @property Utility $utility
+ * @property VirtualAccount $virtualAccount
+ * @property Webhook $webhook
+ */
 class Api
 {
     protected static $baseUrl = 'https://api.razorpay.com/v1/';
@@ -62,7 +86,7 @@ class Api
      */
     public function __get($name)
     {
-        $className = __NAMESPACE__.'\\'.ucwords($name);
+        $className = __NAMESPACE__ . '\\' . ucwords($name);
 
         $entity = new $className();
 
